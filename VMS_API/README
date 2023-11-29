@@ -1,0 +1,30 @@
+Vendor Management System::
+    This system will handle vendor profiles, track purchase orders, and calculate vendor performance
+    metrics.
+
+create Virtual Enviroment to and install packages in requirements.txt
+ 
+\> pip install -r requirements.txt 
+
+
+Project Structure:
+
+- virtual
+
+<!-- Worked files in this project -->
+- VMS_API
+    |
+    |___ VMS_API
+    |   |
+    |   |___settings.py
+    |   |___urls.py
+    |
+    |___ vms_app
+    |   |
+    |   |___model.py
+    |   |___serializer.py - Serializing and deserializing the complex python data to JSON data type and vice versa.
+    |   |___views.py
+    |   |___url.py - here we declare the app url and this url file was conneted to project url.py file
+    |   |___admin.py
+    |
+    |___requirements.txt
