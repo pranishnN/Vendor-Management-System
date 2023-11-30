@@ -47,15 +47,17 @@ def update_vendor_performance(vendor_id:int):
 
         on_time_delivery_rate = delivery_on_order / total_completed_order.count()
         quality_avg_rating = po_quality_rating / total_completed_order.count()
-        avg_response_time = sum(days_diff_lst) / len(days_diff_lst)
-        fulfilment_rate = total_completed_order.filter(issue_date__isnull=True).count() / total_completed_order.filter(issue_date__isnull=False).count()
+        avg_response_time = sum(days_diff_lst) / len(days_diff_lst) if len(days_diff_lst) != 0 else 0
+        fulfilment_rate = total_completed_order.filter(issue_date__isnull=True).count() / VENDOR_PO_QS.count()  # total_completed_order.filter(issue_date__isnull=False).count()
 
         ven_perf_data = {'vendor_id': vendor_id, 'date': datetime_now, 'on_time_delivery_rate': on_time_delivery_rate,
                         'quality_rating_avg': quality_avg_rating, 'average_response_time': avg_response_time, 'fulfillment_rate': fulfilment_rate}
         default_val = {'vendor_id': vendor_id}
-
-        ven_perf_obj, _created = PerformanceModel.objects.update_or_create(**ven_perf_data, defaults=default_val)
-        ven_perf_obj.save()
+        print('=====ven_perf_data=======', ven_perf_data.items())
+        if PerformanceModel.objects.filter(**default_val).exists():
+            ven_perf_obj = PerformanceModel.objects.filter(**default_val).update(**ven_perf_data)
+        else:
+            ven_perf_obj = PerformanceModel.objects.create(**ven_perf_data)
 
     except Exception as e:
         print('----------e--', e)
@@ -189,7 +191,8 @@ class EditPurchaseOrderAPI(APIView):
             item value to dumbed value to save in db.
             """
             request.data._mutable = True
-            request.data['items'] = json.dumps(request.data['items'])
+            if request.data.get('items', None):
+                request.data['items'] = json.dumps(request.data['items'])
             request.data._mutable = False
 
             queryset = self.get_queryset(po_id).first()
