@@ -1,0 +1,11 @@
+Create virtualEnv 
+/> py -m venv virtual
+
+Install packages in requirements.txt
+/> pip install -r requirements.txt
+
+Enter into the project folder
+/> cd VMS_API
+
+Run project:
+/> py manage.py runserver
