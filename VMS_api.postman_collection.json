@@ -1,0 +1,550 @@
+{
+	"info": {
+		"_postman_id": "6b8e621b-f9a2-48ab-9dd3-ae5f4c743380",
+		"name": "VMS_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31462155"
+	},
+	"item": [
+		{
+			"name": "vendor",
+			"item": [
+				{
+					"name": "post vendor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": " test",
+									"type": "text"
+								},
+								{
+									"key": "contact_details",
+									"value": " 9459459455",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": " Erode",
+									"type": "text"
+								},
+								{
+									"key": "vendor_code",
+									"value": " 2341",
+									"type": "text"
+								},
+								{
+									"key": "on_time_delivery_rate",
+									"value": " 12",
+									"type": "text"
+								},
+								{
+									"key": "quality_rating_avg",
+									"value": " 10",
+									"type": "text"
+								},
+								{
+									"key": "average_response_time",
+									"value": " 10",
+									"type": "text"
+								},
+								{
+									"key": "fulfillment_rate",
+									"value": " 12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/vendor/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vendor",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get vendor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/vendor/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vendor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put vendor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Samson",
+									"type": "text"
+								},
+								{
+									"key": "contact_details",
+									"value": " 9459459433",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": " Erode",
+									"type": "text"
+								},
+								{
+									"key": "vendor_code",
+									"value": " 2341",
+									"type": "text"
+								},
+								{
+									"key": "on_time_delivery_rate",
+									"value": " 12",
+									"type": "text"
+								},
+								{
+									"key": "quality_rating_avg",
+									"value": " 10",
+									"type": "text"
+								},
+								{
+									"key": "average_response_time",
+									"value": " 10",
+									"type": "text"
+								},
+								{
+									"key": "fulfillment_rate",
+									"value": " 25",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/vendor/2/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vendor",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete vendor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": " test123",
+									"type": "text"
+								},
+								{
+									"key": "contact_details",
+									"value": " 9459459433",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": " Erode",
+									"type": "text"
+								},
+								{
+									"key": "vendor_code",
+									"value": " 2341",
+									"type": "text"
+								},
+								{
+									"key": "on_time_delivery_rate",
+									"value": " 12",
+									"type": "text"
+								},
+								{
+									"key": "quality_rating_avg",
+									"value": " 10",
+									"type": "text"
+								},
+								{
+									"key": "average_response_time",
+									"value": " 10",
+									"type": "text"
+								},
+								{
+									"key": "fulfillment_rate",
+									"value": " 25",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/vendor/2/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vendor",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Puchase Order",
+			"item": [
+				{
+					"name": "post purcase_order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "po_number",
+									"value": "PO0001",
+									"type": "text"
+								},
+								{
+									"key": "vendor",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "order_date",
+									"value": "2023-12-05T00:00:00Z",
+									"type": "text"
+								},
+								{
+									"key": "delivery_date",
+									"value": "2023-12-05T00:00:00Z",
+									"type": "text"
+								},
+								{
+									"key": "items",
+									"value": "{'item1':'Pen'}",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "New Order",
+									"type": "text"
+								},
+								{
+									"key": "quality_rating",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "issue_date",
+									"value": "2023-11-25T00:00:00Z",
+									"type": "text"
+								},
+								{
+									"key": "acknowledgment_date",
+									"value": "2023-11-28T00:00:00Z",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/purchase_orders/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"purchase_orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get purcase_order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "po_number",
+									"value": "PO0001",
+									"type": "text"
+								},
+								{
+									"key": "vendor",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "order_date",
+									"value": "2023-12-05T00:00:00Z",
+									"type": "text"
+								},
+								{
+									"key": "delivery_date",
+									"value": "2023-12-05T00:00:00Z",
+									"type": "text"
+								},
+								{
+									"key": "items",
+									"value": "{'item1':'Pen'}",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "New Order",
+									"type": "text"
+								},
+								{
+									"key": "quality_rating",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "issue_date",
+									"value": "2023-11-25T00:00:00Z",
+									"type": "text"
+								},
+								{
+									"key": "acknowledgment_date",
+									"value": "2023-11-28T00:00:00Z",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/purchase_orders/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"purchase_orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put purcase_order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "po_number",
+									"value": "PO0001",
+									"type": "text"
+								},
+								{
+									"key": "vendor",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "order_date",
+									"value": "2023-12-05T00:00:00Z",
+									"type": "text"
+								},
+								{
+									"key": "delivery_date",
+									"value": "2023-12-05T00:00:00Z",
+									"type": "text"
+								},
+								{
+									"key": "items",
+									"value": "{'item1':'Pen'}",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "New Order",
+									"type": "text"
+								},
+								{
+									"key": "quality_rating",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "issue_date",
+									"value": "2023-11-25T00:00:00Z",
+									"type": "text"
+								},
+								{
+									"key": "acknowledgment_date",
+									"value": "2023-11-28T00:00:00Z",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/purchase_orders/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"purchase_orders",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete purcase_order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "po_number",
+									"value": "PO0001",
+									"type": "text"
+								},
+								{
+									"key": "vendor",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "order_date",
+									"value": "2023-12-05T00:00:00Z",
+									"type": "text"
+								},
+								{
+									"key": "delivery_date",
+									"value": "2023-12-05T00:00:00Z",
+									"type": "text"
+								},
+								{
+									"key": "items",
+									"value": "{'item1':'Pen'}",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "New Order",
+									"type": "text"
+								},
+								{
+									"key": "quality_rating",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "issue_date",
+									"value": "2023-11-25T00:00:00Z",
+									"type": "text"
+								},
+								{
+									"key": "acknowledgment_date",
+									"value": "2023-11-28T00:00:00Z",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/purchase_orders/2/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"purchase_orders",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vendor Performance",
+			"item": [
+				{
+					"name": "post vendor performance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/vendors/1/performance",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vendors",
+								"1",
+								"performance"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
